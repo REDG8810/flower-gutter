@@ -26,10 +26,10 @@ public class destroy_object : MonoBehaviour
         {
             if(part != null)
             {
-                GameObject particle = Instantiate(part, this.gameObject.transform.position, Quaternion.identity);
+                //GameObject particle = Instantiate(part, this.gameObject.transform.position, Quaternion.identity);
                 //particle.transform.localScale = this.gameObject.transform.localScale;
-                particle.AddComponent<destroy_object>().set_time(20.0f, null);
-                Debug.Log("Instanitiate " + particle);
+                //particle.AddComponent<destroy_object>().set_time(20.0f, null);
+                //Debug.Log("Instanitiate " + particle);
                 Destroy(this.gameObject);
 
             }

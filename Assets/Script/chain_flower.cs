@@ -233,7 +233,7 @@ public class chain_flower : MonoBehaviour
     {
         if (this.transform.position.y >= disappeareHeight)
         {
-            Debug.Log("start Collapse");
+            //Debug.Log("start Collapse");
             foreach (GameObject chainObjTemp in chainList)
             {
                 //Õ“Ë’n“_‚ğ‘S‚Ä‚Ì½‚É“`‚¦‚é

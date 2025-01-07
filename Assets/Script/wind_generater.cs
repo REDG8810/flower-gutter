@@ -52,8 +52,10 @@ public class wind_generater : MonoBehaviour
         if (currentTime - previousTime >= generateTime)
         { 
             Instantiate(wind, position, Quaternion.identity);
+            wind.GetComponent<wind_movement>().set_vector(new Vector3(0, 0, posZ));
             //UnityEngine.Debug.Log("generate");
             previousTime = currentTime;
         }
     }
+
 }

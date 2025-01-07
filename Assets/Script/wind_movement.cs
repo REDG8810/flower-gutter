@@ -19,6 +19,7 @@ public class wind_movement : MonoBehaviour
 
     private
     Vector3
+        vector,
         velocity;
 
     private
@@ -33,7 +34,7 @@ public class wind_movement : MonoBehaviour
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
         rb.useGravity = false;
-        velocity = new Vector3(0.0f, 0.0f, initialSpeed);
+        velocity = vector;
         //Debug.Log("wind apperare");
         //Debug.Log(this.gameObject.transform.position);
         spawnTime = Time.time;
@@ -50,6 +51,8 @@ public class wind_movement : MonoBehaviour
     {
         //Debug.Log("hit" + collision.gameObject.name);
     }
+
+
     private void movment_control()
     {
         // è„â∫ÇÃìÆÇ´Çâ¡Ç¶ÇÈ
@@ -77,5 +80,10 @@ public class wind_movement : MonoBehaviour
             Destroy(this.gameObject);
             
         }
+    }
+
+    public void set_vector(Vector3 vec)
+    {
+        vector = vec;
     }
 }

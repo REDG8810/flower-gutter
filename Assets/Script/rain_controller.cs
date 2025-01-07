@@ -92,11 +92,11 @@ public class rain_controller : MonoBehaviour
                 Vector3 initialPos = new Vector3(spawnPosition.x, height, spawnPosition.z);
                 Vector3 direction = (new Vector3(spawnPosition.x, 0, spawnPosition.z).normalized) * sphereRadius;
                 Vector3 targetPos = new Vector3(direction.x, -1.0f * height, direction.z);
-                Debug.Log("raincontroller cycleTime" + cycleTime);
+                //Debug.Log("raincontroller cycleTime" + cycleTime);
 
                 spawnedObject.AddComponent<rain_movement>().set_movement(cycleTime, initialPos, targetPos, sizingTime, initialSize, targetSize);
 
-                Debug.Log("initialSize : " + initialSize + ", targetSize : " + targetSize + ", sizingTime : " + sizingTime);
+                //Debug.Log("initialSize : " + initialSize + ", targetSize : " + targetSize + ", sizingTime : " + sizingTime);
                 //spawnedObject.AddComponent<rain_movement>().set_transform(sizingTime, initialSize,  targetSize);
             }
 

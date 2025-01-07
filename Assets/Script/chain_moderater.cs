@@ -110,6 +110,13 @@ public class chain_moderater : MonoBehaviour
         float vectorDistance = get_distance(hitPosition, this.transform.position);
 
         //衝突したオブジェクトとのインデックスの差で破片の細かさを変更
+        
+        //if (collapseIndex <=  myIndex)
+        //{
+        //    splinterObject = Instantiate(sprinterObjectSmall, this.transform.position, this.transform.rotation);
+        //    splinterObject.transform.SetParent(parent.transform);
+        //    splinterObject.transform.localScale = this.transform.localScale;
+        //}
         if (indexDistance <= splinterIndexMin)
         {
             splinterObject = Instantiate(sprinterObjectSmall, this.transform.position, this.transform.rotation);

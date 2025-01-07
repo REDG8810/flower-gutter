@@ -47,29 +47,31 @@ public class drop_generater : MonoBehaviour
             Vector3 dropAngle = new Vector3(-90.0f, 0.0f, 0.0f);
 
             int rand = Random.Range(1, varius + 1);
-            if(rand == 1)
-            { 
-                drop = Instantiate(dropObjectA, generatePosition, Quaternion.Euler(dropAngle));
-                drop.GetComponent<drop_movement>().flowerVarius = 1;
-            }
-            else if(rand == 2)
+
+            if (this.gameObject.GetComponent<wind_eventer>().isEvent != true)
             {
-                drop = Instantiate(dropObjectB, generatePosition, Quaternion.Euler(dropAngle));
-                drop.GetComponent<drop_movement>().flowerVarius = 2;
+                if (rand == 1)
+                {
+                    drop = Instantiate(dropObjectA, generatePosition, Quaternion.Euler(dropAngle));
+                    drop.GetComponent<drop_movement>().flowerVarius = 1;
+                }
+                else if (rand == 2)
+                {
+                    drop = Instantiate(dropObjectB, generatePosition, Quaternion.Euler(dropAngle));
+                    drop.GetComponent<drop_movement>().flowerVarius = 2;
+                }
+                else
+                {
+                    drop = Instantiate(dropObjectC, generatePosition, Quaternion.Euler(dropAngle));
+                    drop.GetComponent<drop_movement>().flowerVarius = 3;
+                }
+
+                //GameObject drop = Instantiate(dropObject, generatePosition, Quaternion.Euler(dropAngle));
+                drop.transform.localScale = dropSizeInitial;
+                drop.GetComponent<drop_movement>().dropIndex = 0;
+                drop.GetComponent<drop_movement>().initialSize = dropSizeInitial;
             }
-            else
-            {
-                drop = Instantiate(dropObjectC, generatePosition, Quaternion.Euler(dropAngle));
-                drop.GetComponent<drop_movement>().flowerVarius = 3;
-            }
 
-
-
-
-            //GameObject drop = Instantiate(dropObject, generatePosition, Quaternion.Euler(dropAngle));
-            drop.transform.localScale = dropSizeInitial;
-            drop.GetComponent<drop_movement>().dropIndex = 0;
-            drop.GetComponent<drop_movement>().initialSize = dropSizeInitial;
 
             yield return new WaitForSeconds(generateInterval);
         }
